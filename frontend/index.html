@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Pantry — Tiny Pixel Art Editor</title>
+    <meta name="description" content="Pixel Pantry — create, save and browse your pixel art locally. Lightweight editor, export PNG, gallery and local storage." />
+    <meta name="theme-color" content="#6c63ff" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Preconnect to font providers for faster load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Professional fonts: Inter for UI + JetBrains Mono for code/pixel preview -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon / app icon (add the file at frontend/src/assets/favicon.svg or change path) -->
+    <link rel="icon" href="/src/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="/src/assets/favicon.png" />
+
+    <!-- Small inline script to set initial theme quickly (prevents flash) -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('pp-theme');
+          if (stored) {
+            document.documentElement.dataset.theme = stored;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.dataset.theme = 'dark';
+          } else {
+            document.documentElement.dataset.theme = 'light';
+          }
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root" role="application" aria-label="Pixel Pantry — Pixel art editor"></div>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <noscript>
+      <div style="padding:16px; text-align:center; background:#fff4; color:#111;">
+        This app requires JavaScript to run — please enable JavaScript in your browser.
+      </div>
+    </noscript>
+  </body>
+</html>

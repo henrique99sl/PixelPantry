@@ -1,0 +1,24 @@
+# Ignorar dependências do Node e Python
+node_modules
+__pycache__
+*.pyc
+*.pyo
+
+# Ignorar arquivos de log e sistemas locais
+*.log
+.DS_Store
+
+# Ignorar build local do frontend (será gerado no container)
+dist
+build
+
+# Ignorar virtualenvs locais
+venv
+.env
+
+# Ignorar arquivos de configuração do editor
+.idea
+.vscode
+
+# Ignorar arquivos temporários do sistema
+*.swp
