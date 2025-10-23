@@ -3,19 +3,39 @@ node_modules/
 dist/
 build/
 npm-debug.log*
+yarn-error.log
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*.env
 venv/
 .env
+*.sqlite
+*.db
+pixel.db
+
+# Docker
+*.dockerignore
+Dockerfile
+docker-compose*.yml
 
 # Sistema / IDE
 .DS_Store
 .idea/
 .vscode/
 *.swp
+*.swo
+Thumbs.db
 
 # Logs
 *.log
+logs/
+*.out
+*.err
+
+# Vite / React
+*.local
+*.cache

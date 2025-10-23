@@ -10,7 +10,7 @@ function colorToCss(c: string) {
 }
 
 export default function App() {
-  const [width, setWidth] = useState(16);
+  const [width, setWidth] = useState(35);
   const [height, setHeight] = useState(16);
   const [grid, setGrid] = useState<string[][]>(() => make2DArray(16, 16));
   const [color, setColor] = useState("#ff2d55");
