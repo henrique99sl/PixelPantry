@@ -4,47 +4,104 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixel Pantry — Tiny Pixel Art Editor</title>
-    <meta name="description" content="Pixel Pantry — create, save and browse your pixel art locally. Lightweight editor, export PNG, gallery and local storage." />
-    <meta name="theme-color" content="#6c63ff" />
+    <meta
+      name="description"
+      content="Pixel Pantry — create, save and browse your pixel art locally. Lightweight editor, export PNG, gallery and local storage."
+    />
+    <meta name="theme-color" content="#c76fed" />
     <meta name="color-scheme" content="light dark" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Pixel Pantry" />
 
     <!-- Preconnect to font providers for faster load -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Professional fonts: Inter for UI + JetBrains Mono for code/pixel preview -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Fonts: Inter (UI) + JetBrains Mono (pixel grid/code) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Favicon / app icon (add the file at frontend/src/assets/favicon.svg or change path) -->
+    <!-- Favicons -->
     <link rel="icon" href="/src/assets/favicon.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/src/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/src/assets/favicon.png" />
 
-    <!-- Small inline script to set initial theme quickly (prevents flash) -->
+    <!-- Manifest (for PWA support, optional) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Social / SEO meta -->
+    <meta property="og:title" content="Pixel Pantry — Tiny Pixel Art Editor" />
+    <meta
+      property="og:description"
+      content="Create and save your pixel art easily in the browser — minimalist editor with export and gallery."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/src/assets/preview.png" />
+
+    <!-- Initial theme (prevents flash) -->
     <script>
-      (function() {
+      (function () {
         try {
-          const stored = localStorage.getItem('pp-theme');
+          const stored = localStorage.getItem("pp-theme");
           if (stored) {
             document.documentElement.dataset.theme = stored;
-          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.dataset.theme = 'dark';
+          } else if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.dataset.theme = "dark";
           } else {
-            document.documentElement.dataset.theme = 'light';
+            document.documentElement.dataset.theme = "light";
           }
-        } catch (e) { /* ignore */ }
+        } catch (e) {}
       })();
     </script>
-  </head>
-  <body>
-    <div id="root" role="application" aria-label="Pixel Pantry — Pixel art editor"></div>
 
-    <!-- Vite entry -->
+    <style>
+      /* Simple background placeholder before React loads */
+      body {
+        margin: 0;
+        background: #121212;
+        color: #eee;
+        font-family: "Inter", system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      #root:empty::before {
+        content: "Loading Pixel Pantry…";
+        opacity: 0.6;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="root"
+      role="application"
+      aria-label="Pixel Pantry — Pixel art editor"
+    ></div>
+
+    <!-- Vite entry point -->
     <script type="module" src="/src/main.tsx"></script>
 
     <noscript>
-      <div style="padding:16px; text-align:center; background:#fff4; color:#111;">
-        This app requires JavaScript to run — please enable JavaScript in your browser.
+      <div
+        style="
+          padding: 16px;
+          text-align: center;
+          background: #fff4;
+          color: #111;
+          font-family: system-ui, sans-serif;
+        "
+      >
+        This app requires JavaScript to run — please enable JavaScript in your
+        browser.
       </div>
     </noscript>
   </body>
