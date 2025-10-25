@@ -127,8 +127,10 @@ export default function App() {
       <header className="header">
         <div className="brand">
           <div className="logo" aria-hidden>
-            PP
+               <span className="p-normal">P</span>
+               <span className="p-reverso">P</span>
           </div>
+
           <div>
             <h1>Pixel Pantry</h1>
             <p className="muted">Tiny pixel editor & gallery</p>
