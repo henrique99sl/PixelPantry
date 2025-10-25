@@ -68,8 +68,9 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 380px;
-  gap: 20px;
+  gap: 28px; /* ↑ aumentado o espaçamento entre editor e galeria */
   align-items: start;
+  padding: 0 12px; /* ↑ afastar das bordas laterais */
 }
 
 /* Header / Brand — refined spacing & style */
@@ -84,7 +85,7 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--elevation-1);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  margin-bottom: 20px;
+  margin-bottom: 24px; /* ↑ ligeiro aumento para melhor separação */
 }
 
 .brand {
@@ -96,27 +97,24 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #b450e6, #d47aff); /* degrade roxo moderno */
+  background: linear-gradient(135deg, #b450e6, #d47aff);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px; /* separação entre os dois P */
+  gap: 2px;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 20px;
   letter-spacing: -1px;
   box-shadow: 0 4px 10px rgba(180, 80, 230, 0.25);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* leve profundidade */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
-
-/* segundo P espelhado */
 .p-reverso {
   display: inline-block;
   transform: scaleX(-1);
-  opacity: 0.9; /* ligeira diferença para suavizar o contraste */
+  opacity: 0.9;
 }
-
 
 .brand h1 {
   font-size: 1.2rem;
@@ -185,7 +183,7 @@ button, .btn {
   background: transparent;
   cursor: pointer;
   font-weight: 600;
-  color: #1e293b; /* texto mais escuro */
+  color: #1e293b;
   transition: var(--btn-transition);
   box-shadow: none;
   -webkit-tap-highlight-color: transparent;
@@ -303,7 +301,7 @@ button:disabled, .btn:disabled { opacity: .5; cursor: not-allowed; transform: no
 .grid {
   display: grid;
   gap: var(--cell-gap);
-  background: rgba(0,0,0,0.12); /* linhas subtis visíveis */
+  background: rgba(0,0,0,0.12);
   border-radius: 10px;
   padding: 6px;
   justify-self: start;
@@ -400,7 +398,7 @@ button:disabled, .btn:disabled { opacity: .5; cursor: not-allowed; transform: no
 
 /* Responsive */
 @media (max-width: 980px) {
-  .container { grid-template-columns: 1fr; padding: 18px; }
+  .container { grid-template-columns: 1fr; padding: 0 16px; gap: 24px; }
   .gallery { position: relative; height: auto; }
   .editor { min-height: 420px; }
 }
@@ -429,3 +427,4 @@ button:focus, .btn:focus {
 .gallery {
   background: #ffffff !important;
 }
+
