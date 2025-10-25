@@ -96,7 +96,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--tone-2), var(--tone-5));
+  background: #c76fed;
   display: flex;
   align-items: center;
   justify-content: center;
